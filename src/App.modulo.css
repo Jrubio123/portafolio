@@ -1,0 +1,9 @@
+
+@import "./variables.css";
+
+.App {
+  background-color: var(--color-oscuro);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
+import "./App.modulo.css";
 
 function App() {
   return (
     <div className='App'>
-      <h1>Hola Mundo desde React!</h1>
+      <div className={StyleSheet.App}>Hola Mundo desde React!</div>
     </div>
   );
 }
