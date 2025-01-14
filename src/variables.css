@@ -1,0 +1,15 @@
+/* este archivo lo usaremos para poder definir cosas como colores y fuentes en un solo lugar */
+/* de esta manera hacer cambios mas adelantes en 1 solo lugar */
+
+:root{
+    /* Colores*/
+    --color-texto:#fff;
+    --color-primario: #576cbc;
+    --color-secundario: #19376d;
+    --color-oscuro: #0b2447;
+    --color-bg:#04152d;
+
+     /* Fuentes */
+     --fuente-roboto:"Roboto";
+
+}

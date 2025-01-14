@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/outfit": "^5.1.1",
+    "@fontsource/roboto": "^5.1.1",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
     "popper": "^1.0.1",
