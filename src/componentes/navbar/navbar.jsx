@@ -1,10 +1,10 @@
 import React from 'react';
-import Styles from "./Navbar.modulo.css"; // Asegúrate de que exista este archivo correctamente
+import Styles from "./Navbar.module.css"; 
 
 export const Navbar = () => {
     return (
         <nav className={Styles.navbar}>
-            <a style={Styles.titulo} href='/'>Portafolio</a>
+            <a className={Styles.titulo} href='/'>Portafolio</a>
             <div className={Styles.menu}>
                 <ul className={Styles.menuItems}>
                     <li>
