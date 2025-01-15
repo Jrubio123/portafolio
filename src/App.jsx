@@ -1,10 +1,11 @@
 import React from 'react';
-import "./App.modulo.css";
+import { Navbar } from "./componentes/Navbar/Navbar";
+
 
 function App() {
   return (
     <div className='App'>
-      <div className={StyleSheet.App}>Hola Mundo desde React!</div>
+      <Navbar/>
     </div>
   );
 }
