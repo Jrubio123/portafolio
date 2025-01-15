@@ -19,15 +19,17 @@
 }
 
 .menu{
-
-}
-
-.menuItems{
-    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-text);
-
-
 }
+
+.menuItems {
+    display: flex;
+    gap: 47px;
+    list-style: none; /*Quita la vineta*/
+  }
+
+  .menuItems a {/*Modificamos los elementos dentro del menu items (los que tienen a)*/
+    font-size: 25px;
+    color: var(--color-text);
+    text-decoration: none;
+  }

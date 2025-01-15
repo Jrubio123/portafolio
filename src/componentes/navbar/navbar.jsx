@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from "react";  // useState: Es como una libreta donde puedes guardar y cambiar información en tu componente.
+//importamos el usestate porque vamos a definir si la hamburguesa esta abierta o cerrada (para hacerlo mas responsivo)
+import {getImageUrl} from "../../utils";
 import Styles from "./Navbar.module.css"; 
 
 export const Navbar = () => {

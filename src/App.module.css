@@ -4,5 +4,5 @@
   background-color: var(--color-bg);
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden;/*controla cómo se comporta el contenido de un elemento cuando este se desborda de sus límites  Hidden: Oculta el contenido desbordante*/
 }
