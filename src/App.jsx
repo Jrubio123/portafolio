@@ -7,6 +7,10 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { Projects } from "./components/Projects/Projects";
 
 function App() {
+
+  // Renderiza todos los componentes principales en orden:
+  // Navbar (navegación), Hero (sección principal), About (información),
+  // Experience (experiencia), Projects (proyectos) y Contact (contacto)
   return (
     <div className={styles.App}>
       <Navbar />

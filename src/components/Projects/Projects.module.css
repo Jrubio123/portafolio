@@ -24,3 +24,11 @@
   gap: 15px;
   width: 100%;
 }
+
+.description {
+  font-size: 25px;
+  padding-top: 0.5%;
+  color:var(--color-text); 
+  margin-bottom: 20px; /* Espacio debajo del párrafo */
+  text-align: center; /* Centrar el texto */
+}

@@ -1,26 +1,10 @@
 [
   {
-    "title": "Project A",
+    "title": "Portafolio",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
+    "description": "Este proyecto consiste en un portafolio personal diseñado para mostrar mis habilidades y experiencia como desarrollador. Fue creado utilizando tecnologías modernas y sirve como una forma de practicar React y diseño responsivo.",
+    "skills": ["React", "CSS", "HTML", "JavaScript"],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
-  },
-  {
-    "title": "Project B",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
-  },
-  {
-    "title": "Project C",
-    "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/Jrubio123/portafolio/tree/master"
   }
 ]
