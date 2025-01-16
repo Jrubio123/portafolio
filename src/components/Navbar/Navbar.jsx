@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import btnOn from "./../../assets/nav/menuIcon.png";
-import btnOff from "./../../assets/nav/closeIcon.png";
+
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -9,18 +8,18 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <a className={styles.titulo} href="/">
-        PORTAFOLIO
+      <a className={styles.title} href="/">
+        Portfolio
       </a>
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
           src={
             menuOpen
-              ? btnOff
-              : btnOn
+              ? getImageUrl("nav/closeIcon.png")
+              : getImageUrl("nav/menuIcon.png")
           }
-          alt="menu-hamburguesa"
+          alt="menu-button"
           onClick={() => setMenuOpen(!menuOpen)}
         />
         <ul
@@ -28,16 +27,16 @@ export const Navbar = () => {
           onClick={() => setMenuOpen(false)}
         >
           <li>
-            <a href="#about">Acerca</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="#experience">Experiencia</a>
+            <a href="#experience">Experience</a>
           </li>
           <li>
-            <a href="#projects">Proyectos</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#contact">Contacto</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>

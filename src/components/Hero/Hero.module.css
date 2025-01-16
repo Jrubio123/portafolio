@@ -1,6 +1,6 @@
 @import "../../vars.css";
 
-.contenedor {
+.container {
   position: relative;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   margin-right: 10%;
 }
 
-.contenido {
+.content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -19,7 +19,7 @@
   z-index: 1;
 }
 
-.titulo {
+.title {
   font-size: 72px;
   font-weight: 900;
   margin-bottom: 33px;
@@ -33,7 +33,7 @@
   -webkit-background-clip: text;
 }
 
-.descripcion {
+.description {
   font-size: 30px;
   font-family: var(--font-roboto);
   margin-bottom: 52px;
