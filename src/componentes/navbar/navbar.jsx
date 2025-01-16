@@ -3,14 +3,32 @@ import React, { useState } from "react";  // useState: Es como una libreta donde
 import { getImageUrl } from "../../utils";
 import Styles from "./Navbar.module.css";
 
+
+
+
 export const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <nav className={Styles.navbar}>
-            <a className={Styles.titulo} href='/'>Portafolio</a>
+            <a className={Styles.titulo} href="/">
+                Portafolio
+            </a>
             <div className={Styles.menu}>
-                <img className={Styles.menuBtn} src={getImageUrl("nav/menuIcon.png")}>
-                </img>
-                <ul className={Styles.menuItems}>
+                <img
+                    className={Styles.menuBtn}
+                    src={
+                        menuOpen
+                            ? getImageUrl("nav/closeIcon.png")
+                            : getImageUrl("nav/menuIcon.png")
+                    }
+                    alt="menu-button"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                />
+                <ul
+                    className={`${Styles.menuItems} ${menuOpen && Styles.menuOpen}`}
+                    onClick={() => setMenuOpen(false)}
+                >
                     <li>
                         <a href='#acerca'>Acerca de</a>
                     </li>
