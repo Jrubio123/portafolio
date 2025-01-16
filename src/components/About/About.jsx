@@ -51,6 +51,15 @@ export const About = () => {
               </p>
             </div>
           </li>
+          <li className={styles.aboutItem}>
+            <img src={getImageUrl("about/university.png")} alt="UI icon" />
+            <div className={styles.aboutItemText}>
+              <h3>Egresado de la UPB</h3>
+              <p>
+                Graduado en ingenieria en sistemas e informatica de la Universidad Pontificia Bolivariana de Medellín
+              </p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
