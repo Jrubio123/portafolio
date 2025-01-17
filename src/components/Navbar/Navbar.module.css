@@ -80,3 +80,47 @@
     z-index: 1;
   }
 }
+.dropdown {
+  position: relative; /* Posiciona este elemento como referencia para el submenú. */
+}
+
+.dropdown a {
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el enlace. */
+  display: flex; /* Hace que el enlace y la flecha se coloquen en línea. */
+  align-items: center; /* Centra el contenido verticalmente. */
+  justify-content: space-between; /* Coloca la palabra "Aplicaciones" y la flecha en los extremos opuestos. */
+}
+
+
+.subMenu {
+  list-style: none; /* Elimina los puntos o números de la lista. */
+  position: absolute; /* Posiciona este elemento de manera flotante, respecto a `.dropdown`. */
+  top: 100%; /* Ubica el submenú justo debajo del botón "Aplicaciones". */
+  left: 0; /* Alinea el submenú con el borde izquierdo del padre. */
+  background-color: var(--color-primary); /* Fondo del submenú. */
+  border: 1px solid #ccc; /* Borde gris alrededor del submenú. */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de flotante. */
+  padding: 10px 0; /* Espaciado interno (arriba y abajo) entre las opciones. */
+  margin: 0; /* Elimina márgenes alrededor del submenú. */
+  border-radius: 5px; /* Bordes redondeados. */
+  z-index: 1000; /* Asegura que el submenú esté encima de otros elementos. */
+  width: 200px; /* Ancho fijo del submenú. */
+}
+
+
+.subMenu li {
+  padding: 3px; /* Espaciado interno para cada opción del submenú. */
+}
+
+
+.subMenu li a {
+  color: var(--color-text); /* Color del texto. */
+  text-decoration: none; /* Elimina el subrayado del enlace. */
+  display: block; /* Hace que cada enlace ocupe todo el ancho disponible. */
+}
+
+
+.subMenu li a:hover {
+  background-color: #007bff; /* Cambia el fondo a azul al pasar el ratón. */
+  color: #fff; /* Cambia el texto a blanco al pasar el ratón. */
+}

@@ -1,14 +1,11 @@
-// Navbar.jsx
-// Componente de navegación que muestra el menú y maneja la funcionalidad responsive
-
 import React, { useState } from "react";
 
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils";
 
 export const Navbar = () => {
-  // Estado para controlar si el menú móvil está abierto o cerrado
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú móvil
+  const [subMenuOpen, setSubMenuOpen] = useState(false); // Estado para el submenú de "Aplicaciones"
 
   return (
     <nav className={styles.navbar}>
@@ -16,23 +13,20 @@ export const Navbar = () => {
         Portafolio
       </a>
       <div className={styles.menu}>
-        
         <img
-          className={styles.menuBtn /* Botón de menú hamburguesa que cambia según el estado */}
+          className={styles.menuBtn}
           src={
             menuOpen
-              ? getImageUrl("nav/closeIcon.png")// Icono cuando está abierto
-              : getImageUrl("nav/menuIcon.png")// Icono hamburguesa cuando está cerrado
+              ? getImageUrl("nav/closeIcon.png")
+              : getImageUrl("nav/menuIcon.png")
           }
           alt="menu-button"
-          onClick={() => setMenuOpen(!menuOpen)/* Lista de enlaces de navegación */}
+          onClick={() => setMenuOpen(!menuOpen)}
         />
         <ul
-         // Aplica clases condicionales según si el menú está abierto
           className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}
-          onClick={() => setMenuOpen(false)}// Cierra el menú al hacer clic
+          onClick={() => setMenuOpen(false)}
         >
-          {/* Enlaces a las diferentes secciones */} 
           <li>
             <a href="#about">Acerca</a>
           </li>
@@ -44,6 +38,30 @@ export const Navbar = () => {
           </li>
           <li>
             <a href="#contact">Contacto</a>
+          </li>
+          {/* Botón para "Aplicaciones" con submenú */}
+          <li className={styles.dropdown}>
+            <a
+              href="#!"
+              onClick={(e) => {
+                e.preventDefault(); // Previene el comportamiento predeterminado del enlace (navegación a una nueva página).
+                setSubMenuOpen(!subMenuOpen); // Cambia el estado del submenú (lo abre/cierra).
+              }}
+            >
+              Aplicaciones <span>{subMenuOpen ? "▲" : "▼"}</span>
+              {/* La flecha cambia según el estado del submenú: ▲ si está abierto, ▼ si está cerrado. */}
+            </a>
+            {subMenuOpen && (
+              <ul className={styles.subMenu}>
+                <li>
+                  <a href="/gestor-gastos">Gestor de Gastos</a>
+                  {/* Un enlace dentro del submenú que lleva al usuario a la aplicación "Gestor de Gastos". */}
+                </li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <a href="#login">Iniciar sesión</a>
           </li>
         </ul>
       </div>
