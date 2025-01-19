@@ -29,7 +29,7 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>Desarrollador Front</h3>
               <p>
-                Experiencia en HTML, CSS y PHP, creando interfaces web funcionales.
+                Aprendizaje continuo en HTML, CSS y PHP, creando interfaces web funcionales.
               </p>
             </div>
           </li>

@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hola, mi nombre es Juan Pablo.</h1>
         <p className={styles.description}>
-        Soy ingeniero en sistemas recién egresado con conocimientos en HTML, CSS, SQL y PL/SQL. 
+        Soy ingeniero en sistemas recién egresado con conocimientos en HTML, CSS, SQL. 
         Actualmente estoy aprendiendo React y Java para expandir mis habilidades en desarrollo web y aplicaciones. 
         Me apasiona resolver problemas y crear soluciones eficientes.
         </p>
