@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./Navbar.module.css";  // Importa los estilos CSS modulares
 import { getImageUrl } from "../../utils";  // Utilidad para obtener URLs de imágenes
+
+
 
 export const Navbar = () => {
   // Estados del componente
@@ -8,6 +10,20 @@ export const Navbar = () => {
   const [appsMenuOpen, setAppsMenuOpen] = useState(false);  // Controla el dropdown de Aplicaciones
   const [loginMenuOpen, setLoginMenuOpen] = useState(false);// Controla el dropdown de Login/Registro
   const [isRegister, setIsRegister] = useState(false);      // Controla si se muestra el form de registro o login
+
+  // Declara el estado para username y password
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Aquí mostramos los valores de username y password
+    console.log({
+      username: username,
+      password: password,
+    });
+  };
+
 
   return (
     <nav className={styles.navbar}>
@@ -60,7 +76,6 @@ export const Navbar = () => {
               </ul>
             )}
           </li>
-
           {/* Dropdown de Login/Registro */}
           <li className={styles.dropdown}>
             <a
@@ -75,71 +90,87 @@ export const Navbar = () => {
               {isRegister ? "Registro" : "Iniciar sesión"}  {/* Texto dinámico según el modo */}
               <span>{loginMenuOpen ? "▲" : "▼"}</span>
             </a>
-
             {/* Submenú de login/registro - solo se muestra si loginMenuOpen es true */}
             {loginMenuOpen && (
               <ul className={styles.subMenu}>
                 {/* Renderizado condicional: Muestra formulario de login o registro */}
                 {!isRegister ? (
-                  <>
-                    {/* Formulario de Login */}
-                    <li>
-                      <h3>Usuario</h3>
-                      <input type="text" name="username" placeholder="Ingresa tu usuario" />
-                    </li>
-                    <li>
-                      <h3>Ingrese Contraseña</h3>
-                      <input type="password" name="password" placeholder="Ingresa tu contraseña" />
-                    </li>
-                    <li>
-                      <button
-                        className={styles.loginButton}
-                        onClick={() => console.log("Iniciar sesión clicado")}
-                      >
-                        Ingresar
-                      </button>
-                    </li>
-                    {/* Enlace para cambiar al modo registro */}
-                    <li>
-                      <a
-                        href="#register"
-                        className={styles.registerLink}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setIsRegister(true);
-                        }}
-                      >
-                        ¿No tienes usuario? Registrarse
-                      </a>
-                    </li>
-                  </>
+                  <form onSubmit={handleLogin}>
+                    {/* Aqui inicia el formulario para el Login */}
+                    <>
+                      {/* Formulario de Login */}
+                      <li>
+                        <h3>Usuario</h3>
+                        <input
+                          type="text"
+                          name="username"
+                          value={username}
+                          placeholder="Ingresa tu usuario"
+                          onChange={(e) => setUsername(e.target.value)} // Actualiza el estado
+                        />
+                      </li>
+                      <li>
+                        <h3>Ingrese Contraseña</h3>
+                        <input 
+                          type="password"
+                          name="password"
+                          value={password}
+                          placeholder="Ingresa tu contraseña"
+                          onChange={(e) => setPassword(e.target.value)} // Actualiza el estado
+                        />
+                      </li>
+                      <li>
+                        <button
+                          className={styles.loginButton}
+                          type="sumbit"
+                        >
+                          Ingresar
+                        </button>
+                      </li>
+                      {/* Enlace para cambiar al modo registro */}
+                      <li>
+                        <a
+                          href="#register"
+                          className={styles.registerLink}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setIsRegister(true);
+                          }}
+                        >
+                          ¿No tienes usuario? Registrarse
+                        </a>
+                      </li>
+                    </>
+                  </form>
                 ) : (
                   <>
-                    {/* Formulario de Registro */}
-                    <li>
-                      <h3>Nombre</h3>
-                      <input type="text" name="name" placeholder="Ingresa tu nombre" />
-                    </li>
-                    <li>
-                      <h3>Usuario</h3>
-                      <input type="text" name="username" placeholder="Ingresa tu usuario" />
-                    </li>
-                    <li>
-                      <h3>Correo</h3>
-                      <input type="email" name="email" placeholder="Ingresa tu correo" />
-                    </li>
-                    <li>
-                      <h3>Contraseña</h3>
-                      <input type="password" name="password" placeholder="Ingresa tu contraseña" />
-                    </li>
-                    <li>
-                      <button
-                        className={styles.loginButton}
-                        onClick={() => console.log("Registro clicado")}
-                      >
-                        Registrarse
-                      </button>
-                    </li>
+                    <form>
+                      {/* Formulario de Registro */}
+                      <li>
+                        <h3>Nombre</h3>
+                        <input type="text" name="name" placeholder="Ingresa tu nombre" />
+                      </li>
+                      <li>
+                        <h3>Usuario</h3>
+                        <input type="text" name="username" placeholder="Ingresa tu usuario" />
+                      </li>
+                      <li>
+                        <h3>Correo</h3>
+                        <input type="email" name="email" placeholder="Ingresa tu correo" />
+                      </li>
+                      <li>
+                        <h3>Contraseña</h3>
+                        <input type="password" name="password" placeholder="Ingresa tu contraseña" />
+                      </li>
+                      <li>
+                        <button
+                          className={styles.loginButton}
+                          onClick={() => console.log("Registro clicado")}
+                        >
+                          Registrarse
+                        </button>
+                      </li>
+                    </form>
                     {/* Enlace para volver al modo login */}
                     <li>
                       <a
