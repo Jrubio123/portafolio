@@ -1,0 +1,32 @@
+# Build directories
+bin/
+obj/
+
+# Visual Studio
+.vscode/
+.vs/
+.vscode/settings.json
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.localhistory/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Node modules (if applicable for frontend tools)
+node_modules/
+
+# RDLC temporary files
+*.rdl.data
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variable files
+.env

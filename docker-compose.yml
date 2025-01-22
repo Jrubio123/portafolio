@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  db:
+    build: ./db
+    container_name: my_portfolio_db
+    environment:
+      SA_PASSWORD: "YourStrong!Password"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  backend:
+    build: ./backend
+    container_name: my_portfolio_backend
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_PORT: 1433
+      DB_USER: sa
+      DB_PASSWORD: YourStrong!Password
+      DB_NAME: myPortfolio
+      DB_DIALECT: mssql
+      PORT: 3000
+    entrypoint: ["sh", "-c", "wait-for-it localhost:1433 -t 60 -- npm start"]
